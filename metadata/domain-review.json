@@ -1,0 +1,73 @@
+{
+  "repo": "vista-move-engine-stack",
+  "language": "Elixir",
+  "category": "Chess and game engines",
+  "goal": "Build an Elixir toolkit that studies engine behavior through framed sample traffic, with bounds and ordering tests and explicit failure cases.",
+  "review_model": {
+    "terms": [
+      "position pressure",
+      "move ordering",
+      "search width",
+      "endgame risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "position pressure",
+      "signal": 65,
+      "slack": 21,
+      "drag": 19,
+      "confidence": 57,
+      "score": 151,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "move ordering",
+      "signal": 71,
+      "slack": 46,
+      "drag": 8,
+      "confidence": 73,
+      "score": 237,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "search width",
+      "signal": 54,
+      "slack": 26,
+      "drag": 15,
+      "confidence": 77,
+      "score": 166,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "endgame risk",
+      "signal": 60,
+      "slack": 53,
+      "drag": 26,
+      "confidence": 90,
+      "score": 185,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "position pressure",
+      "signal": 79,
+      "slack": 39,
+      "drag": 20,
+      "confidence": 81,
+      "score": 218,
+      "lane": "ship"
+    }
+  ]
+}
