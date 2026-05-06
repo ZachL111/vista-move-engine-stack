@@ -1,0 +1,28 @@
+{
+  "repo": "vista-move-engine-stack",
+  "language": "Elixir",
+  "category": "Chess and game engines",
+  "goal": "Build an Elixir toolkit that studies engine behavior through framed sample traffic, with bounds and ordering tests and explicit failure cases.",
+  "weights": {
+    "signal": 4,
+    "slack": 2,
+    "confidence": 2,
+    "drag": 2
+  },
+  "thresholds": {
+    "ship": 164,
+    "watch": 114
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}
